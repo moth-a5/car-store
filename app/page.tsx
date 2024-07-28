@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import { useState } from "react";
 import ProductCard from "./components/ProductCard";
 import db from "../db.json";
+import { formatPrice } from './utils/formatPrice';
 
 interface Product {
   name: string;
@@ -54,8 +55,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className='flex'>
-        <div>
+      <div className='flex gap-4'>
+        <div className='w-2/3'>
 
           <div className='text-3xl font-bold '>รายการรถยนต์</div>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 p-2 gap-4'>
@@ -86,15 +87,17 @@ export default function Home() {
             <tbody>
               {cartItems.map((item) => (
                 <tr key={item.id}>
-                  <td className="flex  px-4 py-2">
-                    <img
-                      src={item.imageSrc}
-                      alt={item.name}
-                      className="w-16 h-16"
-                    />
-                    <span className="ml-2">{item.name}</span>
+                  <td className=" px-4 py-2">
+                    <div className='flex gap-2 items-center'>
+                      <img
+                        src={item.imageSrc}
+                        alt={item.name}
+                        className="w-16 h-16"
+                      />
+                      <span className="ml-2">{item.name}</span>
+                    </div>
                   </td>
-                  <td className="px-4 py-2 text-center">{item.price}</td>
+                  <td className="px-4 py-2 text-center">{formatPrice(item.price)}</td>
                   <td className="px-4 py-2 text-center">
                     <input
                       type="number"
@@ -107,7 +110,7 @@ export default function Home() {
                     />
                   </td>
                   <td className="px-4 py-2 text-right ">
-                    $ {(item.price * item.quantity).toFixed(2)}
+                    {formatPrice(item.price * item.quantity)}
                   </td>
                   <td className="px-4 py-2 text-center">
                     <button
@@ -127,7 +130,7 @@ export default function Home() {
             </div>
             <div className="px-4 py-2 font-bold text-2xl text-white">
               {" "}
-              {calculateTotal().toFixed(2)}
+              {formatPrice(calculateTotal())}
             </div>
           </section>
           {/* -------------------ตะกร้าสินค้า-----------------------------------  */}

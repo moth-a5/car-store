@@ -1,11 +1,4 @@
-
-
-function formatPrice(price: number): string {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  }).format(price);
-}
+import { formatPrice } from "../utils/formatPrice";
 
 const ProductCard = ({ imageSrc, name, price, addToCart }: any) => {
  return (

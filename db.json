@@ -1,0 +1,40 @@
+{
+    "menu": [
+        {
+            "quantity": 1,
+            "image": "/images/benz-c-class.jpg",
+            "name": "Benz C Class",
+            "price": 40000
+        },
+        {
+            "quantity": 2,
+            "image": "/images/ford-fusion.jpg",
+            "name": "Ford fusion",
+            "price": 26000
+        },
+        {
+            "quantity": 3,
+            "image": "/images/honda-civic.jpg",
+            "name": "Honda Civic",
+            "price": 22000
+        },
+        {
+            "quantity": 4,
+            "image": "/images/hyundai-sonata.jpg",
+            "name": "Hyundai Sonata",
+            "price": 24000
+        },
+        {
+            "quantity": 5,
+            "image": "/images/nissan-altima.jpg",
+            "name": "Nissan Altima",
+            "price": 27000
+        },
+        {
+            "quantity": 6,
+            "image": "/images/toyota-camry.jpg",
+            "name": "Toyota Camry",
+            "price": 30000
+        }
+    ]
+}
